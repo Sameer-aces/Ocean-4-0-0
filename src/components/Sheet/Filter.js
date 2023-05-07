@@ -4,7 +4,7 @@ import Modal from "react-modal";
 import { GlobalContext } from "../../GlobalProvider";
 import "../../App.css";
 import { useState } from "react";
-import { Scrollbars } from "react-custom-scrollbars";
+import { Scrollbars } from "react-custom-scrollbars-2";
 
 const customStyles = {
   content: {

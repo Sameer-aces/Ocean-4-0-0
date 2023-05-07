@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { GlobalContext } from "../../GlobalProvider";
 import { pickBy, keys, max, isEmpty } from "lodash";
-import { Scrollbars } from "react-custom-scrollbars";
+import { Scrollbars } from "react-custom-scrollbars-2";
 import { FaTrash } from "react-icons/fa";
 
 const Describe = () => {

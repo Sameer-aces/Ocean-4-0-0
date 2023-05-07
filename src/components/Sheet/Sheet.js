@@ -7,7 +7,7 @@ import { GlobalContext } from "../../GlobalProvider";
 import Header from "../Headers/Header";
 import Footer from "./Footer";
 import ImportExcel from "./ImportExcel";
-import { Scrollbars } from "react-custom-scrollbars";
+import { Scrollbars } from "react-custom-scrollbars-2";
 import Granularity from "./Granularity";
 import Filter from "./Filter";
 import Condition from "./Condition";

@@ -5,7 +5,7 @@ import * as XLSX from "xlsx";
 import { GlobalContext } from "../../GlobalProvider";
 import "../../App.css";
 import { useParams } from "react-router-dom";
-import Scrollbars from "react-custom-scrollbars";
+import Scrollbars from "react-custom-scrollbars-2";
 
 function getDataRange(data) {
   const dataWithValues = pickBy(data, (value, key) => !!value.v);
