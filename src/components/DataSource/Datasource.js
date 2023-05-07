@@ -5,7 +5,7 @@ import Header from "../Headers/Header";
 import ImportExcel from "../Sheet/ImportExcel";
 import { pickBy, keys, max, isEmpty } from "lodash";
 import "../../App.css";
-import { Scrollbars } from "react-custom-scrollbars";
+import { Scrollbars } from "react-custom-scrollbars-2";
 
 const Datasource = () => {
   const dragItem = useRef();
