@@ -54,7 +54,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:5001",
+  "proxy": "https://ocean-user-serverbackend.onrender.com/",
   "eslintConfig": {
     "extends": [
       "react-app",
