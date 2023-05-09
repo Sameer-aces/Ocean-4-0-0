@@ -42,17 +42,14 @@ const Header = () => {
   useEffect(() => {
     if (matchedUser === "Basic") {
       setDisableComponent(true);
-      console.log("working?");
       document.getElementById("disableAnalytics").style.pointerEvents = "none";
       document.getElementById("disableAnalytics").style.opacity = 0.1;
     }
     if (matchedUser === "Standard") {
-      console.log(matchedUser);
       document.getElementById("disableAnalytics").style.pointerEvents = "none";
       document.getElementById("disableAnalytics").style.opacity = 0.1;
     }
   });
-  console.log(matchedUser);
   return (
     <>
       <div className="First-line">

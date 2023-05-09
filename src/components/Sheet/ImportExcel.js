@@ -115,13 +115,10 @@ const ImportExcel = (props) => {
       processData(sheetName, reelData);
       mySheetData[sheetName] = jsonData;
       /* This is to get number of null values*/
-      console.log(worksheet);
-      
       for (const cell in worksheet) {
         // console.log(cell);
         if (cell[0] === "!") continue;
         const value = worksheet[cell].v;
-        console.log(value);
         if (value === null) {
           console.log(`Found null value at ${cell}`);
         }
@@ -207,17 +204,13 @@ const ImportExcel = (props) => {
       );
 
       for (const key in realData) {
-        console.log(key);
         let unique = realData?.[key].filter(
           (item, i, ar) => ar.indexOf(item) === i
         );
 
         realData?.[key].forEach((element, index) => {
-          console.log(element);
           for (let i = 0; i < element.length; i++) {
             if (element === 0) {
-              console.log("undefined");
-              console.log(element);
               // setNullCount((nullCount += 1));
             }
           }

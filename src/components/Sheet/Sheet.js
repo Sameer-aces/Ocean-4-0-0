@@ -60,7 +60,6 @@ const Sheet = () => {
 
   // to get particular row/column data
   const processCsv = (jsonData) => {
-    console.log("clicked");
     const head = jsonData[0];
     const rows = jsonData.slice(1);
     const newArray = rows.map((row) => {
@@ -187,7 +186,6 @@ const Sheet = () => {
   //To display username and to check token
   if (localStorage.jwtToken) {
     const token = localStorage.jwtToken;
-    console.log(token);
     setAuthToken(token);
     const decoded = jwt_decode(token);
     setMatchUser(decoded.Role);

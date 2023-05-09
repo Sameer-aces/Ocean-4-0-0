@@ -5,16 +5,7 @@ import { logoutUser, setCurrentUser } from "../actions/authActions";
 import XlsExport from "xlsexport";
 
 const Header2 = () => {
-  const {
-    columns,
-    dashboards,
-    sheets,
-    selectedWB,
-    selectedSheet,
-    selectedWBSheet,
-    loginUsername,
-    matchedUser,
-  } = useContext(GlobalContext);
+  const { loginUsername, matchedUser } = useContext(GlobalContext);
   const [profileDisplay, setProfileDisplay] = useState("");
 
   let navigate = useNavigate();
@@ -55,19 +46,6 @@ const Header2 = () => {
 
     const xls = new XlsExport(dataSample, "Download");
     xls.exportToXLS();
-  };
-  //
-  const render = () => {
-    return <></>;
-  };
-  console.log(profileDisplay);
-  const handleHover = () => {
-    document.getElementById("myDiv").style.display = "block";
-  };
-  const handleLeave = () => {
-    console.log("leave");
-    setProfileDisplay("");
-    document.getElementById("myDiv").style.display = "none";
   };
 
   return (

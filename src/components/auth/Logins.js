@@ -1,10 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { GlobalContext } from "../../GlobalProvider";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
 import { loginUser } from "../actions/authActions";
 import { useNavigate } from "react-router-dom";
-import classnames from "classnames";
 
 const Login = () => {
   const { form, setForm, Luser, setLUser, setUserData, error, setError } =
@@ -12,7 +9,6 @@ const Login = () => {
 
   let navigate = useNavigate();
 
-  console.log(localStorage);
   const handleChange = (e) => {
     const { id, value } = e.target;
     setLUser({
@@ -33,12 +29,9 @@ const Login = () => {
     } else if (userData.password === null || userData.password === "") {
       setError("Please enter Password");
     }
-    console.log(userData);
     setUserData(userData);
     loginUser(userData);
-
     if (localStorage.length === 1) {
-      console.log("empty");
       navigate("/sheet/sheet", { replace: true });
     }
   };
@@ -114,18 +107,4 @@ const Login = () => {
     </>
   );
 };
-// Login.propTypes = {
-//   loginUser: PropTypes.func.isRequired,
-//   auth: PropTypes.object.isRequired,
-//   errors: PropTypes.object.isRequired,
-// };
-// const mapStateToProps = (state) => (
-//   console.log(state),
-//   {
-//     auth: state.auth,
-//     errors: state.errors,
-//   }
-// );
-
-// export default connect(mapStateToProps, { loginUser })(Login);
 export default Login;

@@ -8,11 +8,9 @@ const AnalyticsMain = () => {
   const [selectanalytic, setselectanalytic] = useState();
   function handleDataDisplay(e) {
     setselectanalytic(e.target.value);
-    console.log("first");
   }
   function handleMLModel(e) {
     setselectanalytic(e.target.value);
-    console.log("ML");
   }
   return (
     <>

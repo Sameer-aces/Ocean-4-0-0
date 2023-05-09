@@ -25,11 +25,9 @@ export const loginUser = (userData, props) => {
     )
     .then((res) => {
       const { token } = res.data;
-      console.log(res);
       localStorage.setItem("jwtToken", token);
       setAuthToken(token);
       const decoded = jwt_decode(token);
-      console.log(decoded);
       setCurrentUser(decoded);
     })
 

@@ -59,7 +59,6 @@ const MLForm = () => {
     axios
       .post("http://localhost:8000/ml/data/", newData)
       .then((res) => setResponse(res));
-    console.log(response.data);
     openModal();
   };
   const openModal = (e) => {
@@ -69,7 +68,6 @@ const MLForm = () => {
     if (response.data === 1) {
       console.log("genuine");
       // x.style.background = "Green";
-      console.log("Skngvfnsdkn");
       setTerm("Genuine");
       console.log(term);
     }

@@ -149,19 +149,4 @@ const Register = (userData) => {
     </>
   );
 };
-// Register.propTypes = {
-//   registerUser: PropTypes.func.isRequired,
-//   auth: PropTypes.object.isRequired,
-//   errors: PropTypes.object.isRequired,
-// };
-
-// const mapStateToProps = (state) => (
-//   console.log(state),
-//   {
-//     auth: state.auth,
-//     errors: state.errors,
-//   }
-// );
-
-// export default connect(mapStateToProps, { registerUser })(Register);
 export default Register;

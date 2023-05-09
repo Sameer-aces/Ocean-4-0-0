@@ -62,7 +62,6 @@ const Footer = () => {
       document.getElementById("disableFooterAnalytics").style.opacity = 0.1;
     }
     if (matchedUser === "Standard") {
-      console.log(matchedUser);
       document.getElementById("disableFooterAnalytics").style.pointerEvents =
         "none";
       document.getElementById("disableFooterAnalytics").style.opacity = 0.1;

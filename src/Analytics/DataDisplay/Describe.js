@@ -24,7 +24,6 @@ const Describe = () => {
           const sa = selectedWB[selectedWBSheet].filter((test) =>
             console.log(typeof test[i])
           );
-          console.log(index);
         }
       }
     });
