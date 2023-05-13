@@ -16,24 +16,35 @@ const Login = () => {
       [id]: value,
     });
   };
-  const handleSubmit = (e) => {
+   const handleSubmit = (e) => {
     e.preventDefault();
     const userData = {
       email: Luser.email,
       password: Luser.password,
       errors: {},
     };
-    setError(null);
+
     if (userData.email === null || userData.email === "") {
       setError("Please enter a valid email address");
     } else if (userData.password === null || userData.password === "") {
       setError("Please enter Password");
+    } else {
+      axios
+        .post(
+          "https://ocean-user-serverbackend.onrender.com/api/users/login",
+          userData
+        )
+        .then((res) => {
+          const { token } = res.data;
+          localStorage.setItem("jwtToken", token);
+          navigate("/sheet/sheet");
+        })
+        .catch((err) => {
+          alert("Email or password invalid");
+        });
     }
+    setError(null);
     setUserData(userData);
-    loginUser(userData);
-    if (localStorage.length === 1) {
-      navigate("/sheet/sheet", { replace: true });
-    }
   };
 
   return (
