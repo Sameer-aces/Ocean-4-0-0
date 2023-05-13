@@ -16,25 +16,25 @@ export const registerUser = (userData, history) => {
     .catch((err) => console.log(err));
 };
 //to get user token
-export const loginUser = (userData, props) => {
-  console.log(props);
-  axios
-    .post(
-      "https://ocean-user-serverbackend.onrender.com/api/users/login",
-      userData
-    )
-    .then((res) => {
-      const { token } = res.data;
-      localStorage.setItem("jwtToken", token);
-      setAuthToken(token);
-      const decoded = jwt_decode(token);
-      setCurrentUser(decoded);
-    })
+// export const loginUser = (userData, props) => {
+//   console.log(props);
+//   axios
+//     .post(
+//       "https://ocean-user-serverbackend.onrender.com/api/users/login",
+//       userData
+//     )
+//     .then((res) => {
+//       const { token } = res.data;
+//       localStorage.setItem("jwtToken", token);
+//       setAuthToken(token);
+//       const decoded = jwt_decode(token);
+//       setCurrentUser(decoded);
+//     })
 
-    .catch((err) => {
-      alert("Email or password invalid");
-    });
-};
+//     .catch((err) => {
+//       alert("Email or password invalid");
+//     });
+// };
 
 export const setCurrentUser = (decoded) => {
   return {
