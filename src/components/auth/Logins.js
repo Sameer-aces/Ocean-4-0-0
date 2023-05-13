@@ -23,7 +23,8 @@ const Login = () => {
       password: Luser.password,
       errors: {},
     };
-
+    setError(null);
+    setUserData(userData);
     if (userData.email === null || userData.email === "") {
       setError("Please enter a valid email address");
     } else if (userData.password === null || userData.password === "") {
@@ -43,8 +44,7 @@ const Login = () => {
           alert("Email or password invalid");
         });
     }
-    setError(null);
-    setUserData(userData);
+  
   };
 
   return (
