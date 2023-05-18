@@ -14,7 +14,7 @@ export const registerUser = (userData, history) => {
     //   userData
     // )
     .post(
-      "https://ocean-user-serverbackend.onrender.com/api/users/login",
+      "https://ocean-user-serverbackend.onrender.com/api/users/register",
       userData
     )
     .then((res) => alert("Registered Successfull pls Login"))
