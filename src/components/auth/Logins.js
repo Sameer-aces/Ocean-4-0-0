@@ -1,12 +1,19 @@
 import React, { useContext, useState, useEffect } from "react";
 import { GlobalContext } from "../../GlobalProvider";
 import { loginUser } from "../actions/authActions";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate, Link } from "react-router-dom";
+import jwt_decode from "jwt-decode";
+import {
+  setAuthenticated,
+  SET_CURRENT_USER,
+  USER_LOADING,
+} from "../actions/types";
+import Sheet from "../Sheet/Sheet";
+import axios from "axios";
 
-const Login = () => {
+const Login = (props) => {
   const { form, setForm, Luser, setLUser, setUserData, error, setError } =
     useContext(GlobalContext);
-
   let navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -24,18 +31,27 @@ const Login = () => {
       errors: {},
     };
     setError(null);
+    setUserData(userData);
     if (userData.email === null || userData.email === "") {
       setError("Please enter a valid email address");
     } else if (userData.password === null || userData.password === "") {
       setError("Please enter Password");
-    }
-    setUserData(userData);
-    loginUser(userData);
-    if (localStorage.length === 1) {
-      navigate("/sheet/sheet", { replace: true });
+    } else {
+      axios
+        .post(
+          "https://ocean-user-serverbackend.onrender.com/api/users/login",
+          userData
+        )
+        .then((res) => {
+          const { token } = res.data;
+          localStorage.setItem("jwtToken", token);
+          navigate("/sheet/sheet");
+        })
+        .catch((err) => {
+          alert("Email or password invalid");
+        });
     }
   };
-
   return (
     <>
       <div className="LoginPage">

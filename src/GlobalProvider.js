@@ -54,10 +54,13 @@ export const GlobalProvider = ({ children }) => {
   const [Uname, setUname] = useState();
   const [Upassword, setUpassword] = useState();
   const [matchedUser, setMatchUser] = useState();
+  const [authenticated, setAuthenticated] = useState(null);
 
   return (
     <GlobalContext.Provider
       value={{
+        authenticated,
+        setAuthenticated,
         error,
         setError,
         loginUsername,

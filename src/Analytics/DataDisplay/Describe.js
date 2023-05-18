@@ -95,7 +95,7 @@ const Describe = () => {
                       Fields
                     </th>
                     <th style={{ border: "2px solid black" }}>DataType</th>
-                    <th style={{ border: "2px solid black" }}>Null</th>
+                    {/* <th style={{ border: "2px solid black" }}>Null</th> */}
                     <th style={{ border: "2px solid black" }}>Unique</th>
                   </thead>
                   <tbody
@@ -131,7 +131,7 @@ const Describe = () => {
                         ))}
                       </tr>
                     </th>
-                    <th
+                    {/* <th
                       style={{
                         borderRight: "3px solid black",
                       }}
@@ -143,7 +143,7 @@ const Describe = () => {
                           </tr>
                         ))}
                       </tr>
-                    </th>
+                    </th> */}
                     <th
                       style={{
                         borderRight: "3px solid black",

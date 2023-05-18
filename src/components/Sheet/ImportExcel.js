@@ -127,11 +127,6 @@ const ImportExcel = (props) => {
         for (let i = 0; i < element.length; i++) {
           if (typeof element[i] === "undefined") {
             setNullCount((nullCount += 1));
-            // nulla.push(1);
-            // setNullCount(nulla);
-            // } else {
-            //   nulla.push(0);
-            //   setNullCount(nulla);
           }
         }
       });
