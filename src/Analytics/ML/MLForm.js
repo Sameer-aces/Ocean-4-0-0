@@ -223,7 +223,7 @@ const MLForm = () => {
             }}
             id="outputbox"
           >
-            This Claim is Genuine{term}
+            This Claim is {term}
           </p>
         </div>
       </Modal>
